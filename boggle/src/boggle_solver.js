@@ -73,7 +73,7 @@ try {
 var trie = new Trie();
 for(var i = 0; i < dictionary.length; i++){
         if (dictionary[i].length > 2){      
-            trie.insert(dictionary[i]);
+            trie.insert(dictionary[i].toUpperCase());
         }
     }
 
@@ -137,7 +137,7 @@ var neighbour_delta = [[-1,-1],[-1,0],[-1,1],[0,-1,],[0,1],[1,-1],[1,0],[1,1]]
 
 // Returns the neighbors for a given co-ordinates
 function get_neighbours(grid,r,c){
-    var n = new Array();
+    var n = [];
     var l = grid.length;
     for (let i = 0; i < neighbour_delta.length; i++){
         var new_r = r + neighbour_delta[i][0];
@@ -182,6 +182,7 @@ function dfs(grid,r,c,visited, trie, now_word, valid){
        
         for (var i = 0; i < n.length; i++){
             dfs(grid,n[i][0], n[i][1], visited, trie, now_word, valid);  
+
         }
     }
 }
@@ -202,20 +203,20 @@ function findAllSolutions(grid){
    // console.log('Dictionary: ', trie.printTrie());
 
     // Keep track of the visited tiles
-    var visited = new Array();
+    var visited = [];
 
     // Keep track of the valid words found in the grid
-    var valid = new Array();
+    var valid = [];
 
     // Run DFS on each tile of the grid
     for(var r = 0; r < grid.length; r++){
         for(var c = 0; c < grid.length; c++){
             var letter = grid[r][c];
             dfs(grid,r,c,visited,trie,'',valid);
-            var visited = new Array();
+            var visited = [];
         }
     }
-    //console.log(valid)
+    console.log(valid)
     return valid;
 }
 

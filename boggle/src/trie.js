@@ -148,7 +148,7 @@ function findAllSolutions(grid, dictionary){
     // Generate trie
     for(var i = 0; i < dictionary.length; i++){
         if (dictionary[i].length > 2){      
-            trie.insert(dictionary[i]);
+            trie.insert(dictionary[i].toUpperCase());
         }
     }
    // console.log('Dictionary: ', trie.printTrie());

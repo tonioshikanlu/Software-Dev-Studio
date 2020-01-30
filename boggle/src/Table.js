@@ -56,21 +56,24 @@ function GridBuilder({row}){
  </Grid>)
 
 }
+
 var grid = RandomGrid()
 export default function Table() { 
  // var grid = RandomGrid()
  return Object.keys(grid).map((key) => {return (<GridBuilder row={grid[key]}/>)});
 }
  
-// var dictionary;
-// try {
-//    var data = require('./full-wordlist.json');
-//    var dictionary = data.words;
-// } catch ( err ) {
-//    // handle your file not found (or other error) here
-// }
+var dictionary;
+try {
+   var data = require('./full-wordlist.json');
+   var dictionary = data.words;
+} catch ( err ) {
+   // handle your file not found (or other error) here
+}
 // var solutions = findAllSolutions(grid)
-window.solutions = findAllSolutions(grid)
+console.log(dictionary)
+console.log(grid)
+window.solutions = findAllSolutions(grid,dictionary)
 //['a','b', 'c', 'd'];
 
 //['a','b', 'c', 'd']
