@@ -62,15 +62,16 @@ export default function Table() {
  return Object.keys(grid).map((key) => {return (<GridBuilder row={grid[key]}/>)});
 }
  
-var dictionary;
-try {
-   var data = require('./full-wordlist.json');
-   var dictionary = data.words;
-} catch ( err ) {
-   // handle your file not found (or other error) here
-}
+// var dictionary;
+// try {
+//    var data = require('./full-wordlist.json');
+//    var dictionary = data.words;
+// } catch ( err ) {
+//    // handle your file not found (or other error) here
+// }
 // var solutions = findAllSolutions(grid)
-window.solutions = ['a','b', 'c', 'd'];
+window.solutions = findAllSolutions(grid)
+//['a','b', 'c', 'd'];
 
 //['a','b', 'c', 'd']
 console.log(window.solutions)
