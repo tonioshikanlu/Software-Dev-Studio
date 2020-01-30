@@ -133,15 +133,15 @@ for(var i = 0; i < dictionary.length; i++){
 //     return result;
 // }
 //console.log(findAllSolutions(grid))
-var neighbour_delta = [[-1,-1],[-1,0],[-1,1],[0,-1,],[0,1],[1,-1],[1,0],[1,1]]
+var neighborhood_coordinates = [[-1,-1],[-1,0],[-1,1],[0,-1,],[0,1],[1,-1],[1,0],[1,1]]
 
 // Returns the neighbors for a given co-ordinates
-function get_neighbours(grid,r,c){
+function search(grid,r,c){
     var n = [];
     var l = grid.length;
-    for (let i = 0; i < neighbour_delta.length; i++){
-        var new_r = r + neighbour_delta[i][0];
-        var new_c = c + neighbour_delta[i][1];
+    for (let i = 0; i < neighborhood_coordinates.length; i++){
+        var new_r = r + neighborhood_coordinates[i][0];
+        var new_c = c + neighborhood_coordinates[i][1];
 
         if ((new_r >= l) || (new_c >= l) || (new_r < 0) || (new_c < 0)){
             continue;
@@ -178,7 +178,7 @@ function dfs(grid,r,c,visited, trie, now_word, valid){
         }
        
         // Get all the valid neighbours
-        var n = get_neighbours(grid,r,c);
+        var n = search(grid,r,c);
        
         for (var i = 0; i < n.length; i++){
             dfs(grid,n[i][0], n[i][1], visited, trie, now_word, valid);  
