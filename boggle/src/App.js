@@ -4,13 +4,14 @@ import './App.css';
 import TextInput from './TextInput.js';
 import Table from './Table.js';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from './Button.js';
 import findAllSolutions from './boggle_solver.js';
 //import user_input from './TextInput.js';
 import swal from '@sweetalert/with-react'
 
+var turner = 0
 function Stop_function()
 {
+  if (turner == 1){
   let difference = window.arr.filter(x => !window.solutions.includes(x)).concat(window.solutions.filter(x => !window.arr.includes(x)));
   hide(document.querySelector('.timer'));
   swal(
@@ -21,6 +22,7 @@ function Stop_function()
     </p>
   </div>
 )
+}
 
 }
 
@@ -34,7 +36,7 @@ state = {
       this.setState({
           isActive: true
       })
-
+    turner = 1
     var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
