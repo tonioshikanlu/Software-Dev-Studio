@@ -1,5 +1,5 @@
 {
-  "name": "codelab-app",
+  "name": "boggle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

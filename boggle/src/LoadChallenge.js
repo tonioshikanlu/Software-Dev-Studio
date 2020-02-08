@@ -3,15 +3,7 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 import './ToggleGameState.css';
 import './App.css';
-import App from './App.js'
 
-
-
-firebase.initializeApp({
-  apiKey: 'AIzaSyC742IEhK0kQlOi6YOwZBSU1nTRWWPQa28',
-  authDomain: 'boggle-toni.firebaseapp.com',
-  projectId: 'boggle-toni'
-});
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
