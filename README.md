@@ -1,5 +1,6 @@
 # Software-Dev-Studio
 Repo for all things software development
+
 Boggle Solver App:
  There are a couple instructions:
  1. When you open the website, please select your settings before clicking start game.
