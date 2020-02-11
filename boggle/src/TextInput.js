@@ -61,6 +61,7 @@ class Test extends React.Component {
       </div>,
       <div key="2">
 	  <p style={{color: 'Black'}} >Words Found: {this.state.text}</p>
+    <p style={{color: 'Black'}} >Score: {window.arr.length}</p>
 	  </div>
 	  ]
     )
