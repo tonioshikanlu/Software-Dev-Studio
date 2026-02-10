@@ -17,7 +17,7 @@
     "perfect-trie": "^1.1.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "sweetalert": "^2.1.2",
     "trie-prefix-tree": "^1.5.1",
     "trie-search": "^1.2.11"
